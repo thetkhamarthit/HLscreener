@@ -58,8 +58,13 @@ with st.sidebar:
         cache_h = st.number_input("ใช้ cache แท่งเทียนได้นาน (ชั่วโมง)", 0.0, 168.0, 6.0, 1.0)
         drop_today = st.checkbox("ไม่ใช้แท่งวันนี้ถ้าตลาดยังไม่ปิด", value=True,
                                  help="Pine คำนวณเฉพาะแท่งที่ปิดแล้ว (barstate.isconfirmed)")
-        tv_user = st.text_input("TradingView username", "")
-        tv_pass = st.text_input("TradingView password", "", type="password")
+        _sec = st.secrets if hasattr(st, "secrets") else {}
+        try:
+            _u, _p = _sec.get("TV_USERNAME", ""), _sec.get("TV_PASSWORD", "")
+        except Exception:
+            _u, _p = "", ""
+        tv_user = st.text_input("TradingView username", _u)
+        tv_pass = st.text_input("TradingView password", _p, type="password")
 
 CFG = {"emas": (int(e_f), int(e_m), int(e_s)), "use_cond": use_cond,
        "near_pct": float(near_pct), "recent_days": int(recent_days),
