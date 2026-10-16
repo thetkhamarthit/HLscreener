@@ -1,0 +1,7 @@
+streamlit>=1.40
+pandas>=2.0
+numpy>=1.26
+plotly>=5.20
+pyarrow>=14.0
+tradingview-screener>=3.0
+tradingview-datafeed>=2.1.1

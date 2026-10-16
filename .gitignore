@@ -1,0 +1,9 @@
+# ข้อมูลที่แอปสร้างขึ้นเอง — ไม่ต้องขึ้น GitHub
+hm_bars_*.parquet
+hm_scan_*.parquet
+hm_funnel_*.json
+*.bak*
+__pycache__/
+.venv/
+# รหัสผ่าน — ห้ามขึ้น GitHub เด็ดขาด
+.streamlit/secrets.toml
